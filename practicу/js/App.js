@@ -26,11 +26,11 @@ class App extends React.Component {
 		const newItem = {}
 
 		for (let i in currentState) {
-			console.log('i =>', i)
-			console.log('id =>', id)
+			// console.log('i =>', i)
+			// console.log('id =>', id)
 			if (id != i) {
 				console.log('newItem[id] =>', newItem[id])
-				newItem[id] = currentState[i]
+				newItem[i] = currentState[i]
 			}
 		}
 
