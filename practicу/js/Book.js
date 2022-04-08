@@ -22,6 +22,20 @@ class Book extends React.Component {
 		this.state = {
 			selected: false,
 		}
+		this.handleClick = this.handleClick.bind(this)
+		this.addBasketBook = this.addBasketBook.bind(this)
+	}
+
+	handleClick(e) {
+		e.preventDefault()
+		this.setState({ selected: !this.state.selected })
+	}
+
+	addBasketBook(e) {
+		e.preventDefault()		
+		let handleAddBasket = this.props.handleAddBasket
+		console.log('this.props.id = ', this.props.id)
+		handleAddBasket(this.props.id)		
 	}
 
 	render() {
@@ -30,7 +44,7 @@ class Book extends React.Component {
 			color: '#369',
 			fontFamily: 'sans-serif',
 		}
-		const formatPrice = price => (price ? <b>{price}</b> : <del>0</del>)
+		const formatPrice = price => (price ? <b>{price}</b> : <del>&nbsp;</del>)
 		const statusBook = this.state.selected ? 'book-selected' : 'book-default'
 
 		return (
@@ -44,14 +58,17 @@ class Book extends React.Component {
 						type='button'
 						className='btn btn-success'
 						href='#'
-						onClick={() => {
-							this.setState({ selected: !this.state.selected })
-						}}
+						onClick={this.handleClick}
 					>
 						Сравнить
 					</a>
 					&nbsp;
-					<a type='button' className='btn btn-success' href='#'>
+					<a
+						type='button'
+						className='btn btn-success'
+						href='#'
+						onClick={this.addBasketBook}
+					>
 						В корзину
 					</a>
 				</div>

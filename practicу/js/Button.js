@@ -3,25 +3,58 @@ class Button extends React.Component {
 		super(props)
 		this.state = {
 			counter: props.counter,
-			color: 'btn-primary',
+			color: 'btn-success',
+			// colorsNum: 0,
+			// colors: [
+			// 	'btn-primary',
+			// 	'btn-secondary',
+			// 	'btn-success',
+			// 	'btn-danger',
+			// 	'btn-warning',
+			// 	'btn-info',
+			// 	'btn-light',
+			// 	'btn-dark',
+			// ],
+			// timer: 1000
 		}
+		this.handleClick = this.handleClick.bind(this)
+		this.handleMouseMove = this.handleMouseMove.bind(this)
+		// this.timerTic = this.timerTic.bind(this)
+
 	}
 
+	handleClick(e) {
+		this.setState({ counter: this.state.counter + 1 })
+	}
+
+	handleMouseMove(e) {
+		console.log(e)
+	}
+
+	// async timerTic(){
+	// 	 await setTimeout(() => {			
+	// 		if (this.state.colorsNum == this.state.colors.length) {
+	// 			this.setState({ colorsNum: 0 })
+	// 		}
+
+	// 		console.log('state.colorsNum = ', this.state.colorsNum)
+
+	// 		this.setState({
+	// 			color: this.state.colors[this.state.colorsNum],
+	// 			colorsNum: this.state.colorsNum + 1,
+	// 		})
+	// 	}, this.state.timer)
+	// }
+
 	render() {
-		setTimeout(() => {
-			const nextColor = this.state.color == 'btn-primary' ? 'btn-success' : 'btn-primary'
-			this.setState({ color: nextColor })
-		}, 1000)
+		// this.timerTic()
+
 		return (
-			<div className='container pt-3'>
+			<div className='container'>
 				<button
 					type='button'
 					className={'btn ' + this.state.color + ' btn-lg'}
-					onClick={() => {
-						this.setState({
-							counter: this.state.counter + 1,
-						})
-					}}
+					onClick={this.handleClick}
 				>
 					{this.props.value}-{this.state.counter}
 				</button>
@@ -31,8 +64,10 @@ class Button extends React.Component {
 }
 
 // const Button = props => {
-// 	const [counter, setCounter] = React.useState(1)
-// 	const [color, setColor] = React.useState('btn-primary')
+// 	const {useState} = React
+
+// 	const [counter, setCounter] = useState(1)
+// 	const [color, setColor] = useState('btn-primary')
 
 // 	setTimeout(() => {
 // 		const nextColor = color == 'btn-primary' ? 'btn-success' : 'btn-primary'
