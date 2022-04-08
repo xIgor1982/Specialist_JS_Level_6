@@ -34,7 +34,7 @@ class Book extends React.Component {
 	addBasketBook(e) {
 		e.preventDefault()		
 		let handleAddBasket = this.props.handleAddBasket
-		console.log('this.props.id = ', this.props.id)
+		// console.log('this.props.id = ', this.props.id)
 		handleAddBasket(this.props.id)		
 	}
 

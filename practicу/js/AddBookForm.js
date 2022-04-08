@@ -25,12 +25,12 @@ class AddBookForm extends React.Component {
 
 	render() {
 		return (
-			<div className='container'>
+			<div className='container mt-3'>
 				<h1 className='text-center'>Добавить книгу</h1>
 				<form action='' onSubmit={this.handleSubmit}>
 					<label className='row'>
 						<div className='col-sm-2'>id</div>
-						<div className='col-sm-10'>
+						<div className='col-sm-8'>
 							<input
 								name='id'
 								className='w-100'
@@ -41,7 +41,7 @@ class AddBookForm extends React.Component {
 					</label>
 					<label className='row'>
 						<div className='col-sm-2'>Название</div>
-						<div className='col-sm-10'>
+						<div className='col-sm-8'>
 							<input
 								name='title'
 								className='w-100'
@@ -52,7 +52,7 @@ class AddBookForm extends React.Component {
 					</label>
 					<label className='row'>
 						<div className='col-sm-2'>Авторы</div>
-						<div className='col-sm-10'>
+						<div className='col-sm-8'>
 							<input
 								name='author'
 								className='w-100'
@@ -63,7 +63,7 @@ class AddBookForm extends React.Component {
 					</label>
 					<label className='row'>
 						<div className='col-sm-2'>Цена</div>
-						<div className='col-sm-10'>
+						<div className='col-sm-8'>
 							<input
 								name='price'
 								className='w-100'
@@ -72,12 +72,16 @@ class AddBookForm extends React.Component {
 							/>
 						</div>
 					</label>
-					<div>
-						<input
-							type='submit'
-							className='btn btn-success w-100'
-							value='Добавить'
-						/>
+					<div className='row'>
+						<div className='col-sm-2'></div>
+						<div className='col-sm-8'>
+							<input
+								type='submit'
+								className='btn btn-success w-100'
+								value='Добавить'
+							/>
+						</div>
+						
 					</div>
 				</form>
 			</div>
